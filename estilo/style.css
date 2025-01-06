@@ -1,17 +1,31 @@
 @charset "UTF-8";
-@font-face { font-family: idroid; src: url(pacote-projeto-d010/fontes/idroid.otf); }
+@font-face { font-family: Android; src: url(../pacote-projeto-d010/fontes/idroid.otf);}
+
+
+:root{
+    --cor0:#ebe5c6;
+    --cor1:#83e1ad;
+    --cor2:#36c274;
+    --cor3:#2b9b5d;
+    --cor4:#2a8d55;
+    --cor5:#1a5c38;
+
+    --fonte-padrao: Arial, Helvetica, sans-serif;
+    --fonte-destaque: Verdana, Geneva, Tahoma, sans-serif;
+    --fonte-android:'Android', cursive;
+
+}
 
 body {
-    background-color: rgb(132, 225, 173);
+    background-color: var(--cor0);
     margin: 0px;
+    font-family: var(--fonte-padrao);
 }
 
 header {
     background-image: linear-gradient(#36c274,#2b9b5d,#2a8d55,#1a5c38);
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+    font-family: var(--fonte-destaque);
     color: white;
-    background-color: rgb(54, 194, 116);
     padding: 1px;
     margin:0px;
 }
@@ -26,7 +40,6 @@ a{
 }
 
 nav{
-    font-family: Arial, Helvetica, sans-serif;
     padding: 10px;
     margin: 10px;
 }
@@ -39,7 +52,7 @@ nav{
 }
 
 .home:hover {
-    background-color: rgb(54, 194, 116);
+    background-color: var(--cor2);
     color: white;
     padding: 5px 10px; /* Aumenta o tamanho do background no hover */
     border-radius: 15px; /* Torna os cantos mais arredondados no hover */
@@ -48,33 +61,65 @@ nav{
 
 main{
     box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.512);
-    margin:auto;
-    padding: 15px 0px 0px 0px;
+    padding: 10px;
     background-color: snow;
-    width: 52%;
+    min-width: 300px;
+    max-width: 1000px;
+    margin:auto;
+    margin-bottom: 30px;
     border-radius: 0px 0px 10px 10px;
 }
 
+main img {
+    width:100%;
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+ .imagem3{
+    width: 50%;
+    display: block;
+    text-align: center;
+    margin: auto;
+ }
+
 .main{
-    font-family: idroid;
+    font-family: var(--fonte-android);
     margin: 20px;
     color: #1a5c38;
 }
 
 p{
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 15px;
     text-indent: 20px;
     margin: 10px;
 }
 h2{
-    font-family: idroid;
-    color: #1a5c38;
+    font-family: var(--fonte-android);
+    color: var(--cor5);
     margin: 20px;
     font-size: 18px;
     background-image: linear-gradient(to right,#36c2758e,#ffff);
     padding: 5px 10px;
     border-radius: 15px;
+}
+
+.Dan{
+    text-decoration: none;
+    color: #1d5e3b;
+    font-weight: bold;
+
+}
+
+
+.Dan:hover{
+    text-decoration: underline;
+    color: var(--cor5);
+}
+
+.Dan:active{
+    text-decoration: none;
+    color:var(--cor5);
 }
 
 .image1{
@@ -93,10 +138,31 @@ h2{
     margin: auto;
 }
 
-.video{
+.Videos{
+    background-color: var(--cor5);
+    padding: 20px;
+    margin: auto;
+}
+
+div.video {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    margin: auto;
+}
+
+div.video::after {
+    padding-top: 56.25%;
     display: block;
-    background-color: #1a5c38;
-    padding: 2px;
+    content: '';
+}
+
+div.video > iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .extra{
@@ -107,7 +173,6 @@ h2{
 }
 
 h3{
-    font-family: Arial, Helvetica, sans-serif;
     background-color: #2ea765;
     color: white;
     padding: 5px 10px;
@@ -115,7 +180,6 @@ h3{
 }
 
 ul{
-    font-family: Arial, Helvetica, sans-serif;
     margin: 10px;
 }
 
@@ -124,7 +188,6 @@ ul{
 }
 
 .links{
-    font-family: Arial, Helvetica, sans-serif;
     font-weight: bold;
     color:#2b9b5d;
 }
@@ -136,7 +199,7 @@ ul{
 
 .links:hover{
     text-decoration: underline;
-    color: #103521;
+    color: var(--cor5);
 }
 
 .fimdamain{
@@ -144,7 +207,7 @@ ul{
 }
 
 footer{
-    background-color: #1a5c38;
+    background-color: var(--cor5);
     padding:10px;
     color: white;
     text-align: center;
